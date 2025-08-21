@@ -6,11 +6,20 @@
 [![codecov](https://codecov.io/gh/UfoMiao/zcf/graph/badge.svg?token=HZI6K4Y7D7)](https://codecov.io/gh/UfoMiao/zcf)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/UfoMiao/zcf)
 
-[中文](README_zh-CN.md) | **English** | [Changelog](CHANGELOG.md)
+[中文](README_zh-CN.md) | **English** | [Changelog](CHANGELOG.md) | [📖 **Complete Documentation**](https://zcf.ufomiao.top)
 
 > Zero-config, one-click setup for Claude Code with bilingual support, intelligent agent system and personalized AI assistant
 
 ![Rendering](./src/assets/screenshot-en.webp)
+
+## 📖 Documentation
+
+For comprehensive guides, tutorials, and best practices, visit our **[GitBook Documentation](https://zcf.ufomiao.top)**:
+
+- **[Getting Started](https://zcf.ufomiao.top/getting-started)** - Installation and setup guide
+- **[Advanced Guide](https://zcf.ufomiao.top/advanced-guide)** - Configuration and customization
+- **[Claude Code Tips](https://zcf.ufomiao.top/claude-tips)** - Best practices and usage tips
+- **[Development](https://zcf.ufomiao.top/development)** - Contributing and architecture guide
 
 ## 🚀 Quick Start
 
@@ -408,28 +417,14 @@ npx zcf ccu               # Daily usage (default), or use: monthly, session, blo
 
 ## 📁 Project Structure
 
+For detailed architecture and development information, see our [Development Documentation](https://zcf.ufomiao.top/development).
+
 ```
 zcf/
-├── README.md              # Documentation
-├── package.json           # npm package configuration
-├── bin/
-│   └── zcf.mjs           # CLI entry point
+├── README.md              # Basic usage
 ├── src/                  # Source code
-│   ├── cli.ts           # CLI main logic
-│   ├── commands/        # Command implementations
-│   ├── utils/           # Utility functions
-│   └── constants.ts     # Constant definitions
 ├── templates/            # Configuration templates
-│   ├── CLAUDE.md        # Project level config (v2.0 new)
-│   ├── settings.json    # Base configuration (with privacy env vars)
-│   ├── en/              # English version
-│   │   ├── rules.md     # Core principles (formerly CLAUDE.md)
-│   │   ├── personality.md # AI personality (v2.0 new)
-│   │   ├── mcp.md       # MCP services guide (v2.0 new)
-│   │   ├── agents/      # AI agents
-│   │   └── commands/    # Command definitions
-│   └── zh-CN/           # Chinese version
-│       └── ... (same structure)
+├── gitbook/             # Complete documentation
 └── dist/                # Build output
 ```
 
@@ -485,69 +480,31 @@ zcf/
 
 ## 🛠️ Development
 
+For detailed development setup and contribution guidelines, see our [Development Documentation](https://zcf.ufomiao.top/development).
+
 ```bash
-# Clone the project
+# Quick setup
 git clone https://github.com/UfoMiao/zcf.git
-cd zcf
-
-# Install dependencies (using pnpm)
-pnpm install
-
-# Build project
-pnpm build
-
-# Local testing
-node bin/zcf.mjs
+cd zcf && pnpm install && pnpm build
 ```
 
 ## 💡 Best Practices
 
+For comprehensive usage tips and best practices, see our [Claude Code Tips](https://zcf.ufomiao.top/claude-tips) section.
+
 1. **Task Breakdown**: Keep tasks independent and testable
-2. **Code Quality**: Follow SOLID, KISS, DRY, and YAGNI principles
-3. **Documentation Management**: The plan will be stored in the `.claude/plan/` directory at the project root
+2. **Code Quality**: Follow SOLID, KISS, DRY, and YAGNI principles  
+3. **Documentation Management**: Plans are stored in `.claude/plan/` directory
 
 ## 🔧 Troubleshooting
 
 If you encounter issues:
 
 1. Re-run `npx zcf` to reconfigure
-2. Check configuration files in `~/.claude/` directory
+2. Check configuration files in `~/.claude/` directory  
 3. Ensure Claude Code is properly installed
-4. If paths contain spaces, ZCF will automatically handle quote wrapping
-5. Use ripgrep (`rg`) preferentially for file searching for better performance
 
-### Cross-Platform Support
-
-#### Windows Platform
-
-ZCF fully supports Windows platform:
-
-- **Auto-detection**: Automatically uses compatible `cmd /c npx` format on Windows systems
-- **Config repair**: Existing incorrect configurations are automatically fixed during updates
-- **Zero-config**: Windows users don't need any extra steps, same experience as macOS/Linux
-
-If you encounter MCP connection issues on Windows, running `npx zcf` will automatically fix the configuration format.
-
-#### Termux Support (v2.1 new)
-
-ZCF now supports running in Android Termux environment:
-
-- **Auto-adaptation**: Automatically detects Termux environment and uses compatible configuration
-- **Enhanced detection**: Intelligently identifies available commands, ensuring normal operation in restricted environments
-- **Full functionality**: Enjoy the same complete features in Termux as on desktop systems
-
-### Security Features (v2.3 new)
-
-#### Dangerous Operation Confirmation Mechanism
-
-To protect user data security, the following operations require explicit confirmation:
-
-- **File System**: Delete files/directories, bulk modifications, move system files
-- **Code Commits**: `git commit`, `git push`, `git reset --hard`
-- **System Config**: Modify environment variables, system settings, permissions
-- **Data Operations**: Database deletions, schema changes, bulk updates
-- **Network Requests**: Send sensitive data, call production APIs
-- **Package Management**: Global install/uninstall, update core dependencies
+For detailed troubleshooting guides, visit our [Advanced Guide](https://zcf.ufomiao.top/advanced-guide/troubleshooting).
 
 ## 🙏 Acknowledgments
 

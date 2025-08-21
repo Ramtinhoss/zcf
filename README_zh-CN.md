@@ -6,11 +6,20 @@
 [![codecov](https://codecov.io/gh/UfoMiao/zcf/graph/badge.svg?token=HZI6K4Y7D7)](https://codecov.io/gh/UfoMiao/zcf)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/UfoMiao/zcf)
 
-**中文** | [English](README.md) | [更新日志](CHANGELOG.md)
+**中文** | [English](README.md) | [更新日志](CHANGELOG.md) | [📖 **完整文档**](https://zcf.ufomiao.top)
 
 > 零配置，一键搞定 Claude Code 环境设置 - 支持中英文双语配置、智能代理系统和个性化 AI 助手
 
 ![效果图](./src/assets/screenshot.webp)
+
+## 📖 文档导航
+
+查看完整的使用指南、教程和最佳实践，请访问我们的 **[GitBook 文档](https://zcf.ufomiao.top)**：
+
+- **[快速开始](https://zcf.ufomiao.top/zh-CN/getting-started)** - 安装和设置指南
+- **[进阶指南](https://zcf.ufomiao.top/zh-CN/advanced-guide)** - 配置和自定义
+- **[Claude Code 使用技巧](https://zcf.ufomiao.top/zh-CN/claude-tips)** - 最佳实践和使用技巧
+- **[开发文档](https://zcf.ufomiao.top/zh-CN/development)** - 贡献指南和架构说明
 
 ## 🚀 快速开始
 
@@ -408,28 +417,14 @@ npx zcf ccu               # 每日用量（默认），或使用: monthly, sessi
 
 ## 📁 项目结构
 
+详细的架构和开发信息请查看我们的[开发文档](https://zcf.ufomiao.top/zh-CN/development)。
+
 ```
 zcf/
-├── README.md              # 说明文档
-├── package.json           # npm 包配置
-├── bin/
-│   └── zcf.mjs           # CLI 入口
+├── README.md              # 基础使用说明
 ├── src/                  # 源代码
-│   ├── cli.ts           # CLI 主逻辑
-│   ├── commands/        # 命令实现
-│   ├── utils/           # 工具函数
-│   └── constants.ts     # 常量定义
 ├── templates/            # 配置模板
-│   ├── CLAUDE.md        # 项目级配置（v2.0新增）
-│   ├── settings.json    # 基础配置（含隐私保护环境变量）
-│   ├── en/              # 英文版
-│   │   ├── rules.md     # 核心原则（原CLAUDE.md）
-│   │   ├── personality.md # AI个性化（v2.0新增）
-│   │   ├── mcp.md       # MCP服务说明（v2.0新增）
-│   │   ├── agents/      # AI 代理
-│   │   └── commands/    # 命令定义
-│   └── zh-CN/           # 中文版
-│       └── ... (相同结构)
+├── gitbook/             # 完整文档
 └── dist/                # 构建输出
 ```
 
@@ -485,36 +480,31 @@ zcf/
 
 ## 🛠️ 开发
 
+详细的开发设置和贡献指南请查看我们的[开发文档](https://zcf.ufomiao.top/zh-CN/development)。
+
 ```bash
-# 克隆项目
+# 快速设置
 git clone https://github.com/UfoMiao/zcf.git
-cd zcf
-
-# 安装依赖（使用 pnpm）
-pnpm install
-
-# 构建项目
-pnpm build
-
-# 本地测试
-node bin/zcf.mjs
+cd zcf && pnpm install && pnpm build
 ```
 
 ## 💡 最佳实践
 
+全面的使用技巧和最佳实践请查看我们的[Claude Code 使用技巧](https://zcf.ufomiao.top/zh-CN/claude-tips)章节。
+
 1. **任务分解**：保持任务独立可测试
 2. **代码质量**：遵循 SOLID、KISS、DRY 和 YAGNI 原则
-3. **文档管理**：计划存储在项目根目录的`.claude/plan/` 目录下
+3. **文档管理**：计划存储在 `.claude/plan/` 目录中
 
 ## 🔧 故障排除
 
-如果遇到问题，可以：
+如果遇到问题：
 
-1. 重新运行 `npx zcf` 重新配置
+1. 重新运行 `npx zcf` 来重新配置
 2. 检查 `~/.claude/` 目录下的配置文件
 3. 确保 Claude Code 已正确安装
-4. 如果路径包含空格，ZCF 会自动处理引号包裹
-5. 优先使用 ripgrep (`rg`) 进行文件搜索以获得更好性能
+
+详细的故障排除指南请访问我们的[进阶指南](https://zcf.ufomiao.top/zh-CN/advanced-guide/troubleshooting)。
 
 ### 跨平台支持
 
